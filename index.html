@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Employee Management Dashboard</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <div class="header">
+
+            <h1>👨‍💼 Employee Management Dashboard</h1>
+
+            <p>Manage employees, salaries, departments and more</p>
+
+        </div>
+
+
+        <!-- Statistics -->
+
+        <div class="stats">
+
+            <div class="stat-card">
+
+                <h3>👥 Total Employees</h3>
+
+                <p id="totalEmployees">0</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3>💰 Total Salary</h3>
+
+                <p id="totalSalary">₹0</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3>📊 Average Salary</h3>
+
+                <p id="averageSalary">₹0</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3>🏆 Highest Salary</h3>
+
+                <p id="highestSalary">₹0</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Search and Department Filters -->
+
+        <div class="controls">
+
+            <input
+                type="text"
+                id="searchInput"
+                class="search-box"
+                placeholder="🔎 Search employee by name..."
+                oninput="searchEmployees()"
+            >
+
+
+            <div class="department-buttons">
+
+                <button onclick="filterDepartment('All')">
+                    🌈 All
+                </button>
+
+                <button onclick="filterDepartment('IT')">
+                    💻 IT
+                </button>
+
+                <button onclick="filterDepartment('HR')">
+                    👥 HR
+                </button>
+
+                <button onclick="filterDepartment('Finance')">
+                    💰 Finance
+                </button>
+
+                <button onclick="filterDepartment('Marketing')">
+                    📢 Marketing
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Add Employee -->
+
+        <div class="form-section">
+
+            <h2>➕ Add New Employee</h2>
+
+
+            <div class="form-grid">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Employee Name"
+                >
+
+
+                <input
+                    type="number"
+                    id="age"
+                    placeholder="Age"
+                >
+
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Email"
+                >
+
+
+                <select id="department">
+
+                    <option value="IT">IT</option>
+
+                    <option value="HR">HR</option>
+
+                    <option value="Finance">Finance</option>
+
+                    <option value="Marketing">Marketing</option>
+
+                </select>
+
+
+                <input
+                    type="number"
+                    id="salary"
+                    placeholder="Salary"
+                >
+
+            </div>
+
+
+            <button
+                class="add-btn"
+                onclick="addEmployee()"
+            >
+                ➕ Add Employee
+            </button>
+
+        </div>
+
+
+        <!-- Sorting -->
+
+        <div class="controls">
+
+            <div class="department-buttons">
+
+                <button onclick="sortEmployees('name')">
+                    🔤 Sort by Name
+                </button>
+
+                <button onclick="sortEmployees('age')">
+                    🎂 Sort by Age
+                </button>
+
+                <button onclick="sortEmployees('salary')">
+                    💰 Sort by Salary
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Message -->
+
+        <div id="message"></div>
+
+
+        <!-- Employee Cards -->
+
+        <div
+            id="employeeGrid"
+            class="employee-grid"
+        ></div>
+
+
+        <!-- Date and Time -->
+
+        <div id="dateTime"></div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
